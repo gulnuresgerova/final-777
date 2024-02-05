@@ -2,11 +2,8 @@ import Head from "next/head";
 
 import Home from "./home";
 import Header from "../../components/layout/Header";
-import Layout from "./layout/Layout";
-import Whelis from "./catagory/whelis";
-import Cars from "./catagory/cars";
-import Bgimg from "../../components/ui/Bg-img";
-import Stop from "./stop/Stop";
+import Footer from "../../components/layout/Footer";
+
 
 const Index = () => {
   return (
@@ -23,13 +20,10 @@ const Index = () => {
       </Head>
 
       <Header />
-      <Layout />
-
-      <Cars />
-      <Bgimg />
-      <Whelis />
-      <Stop/>
       <Home />
+      
+      <Footer/>
+     
     </div>
   );
 };

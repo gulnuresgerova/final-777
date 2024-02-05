@@ -15,13 +15,10 @@ const Header = () => {
         <nav
           className={`md:static absolute top-0 left-0 sm:w-auto md:h-auto w-full h-full  text-white  bg-black  md:flex hidden ${
             isMenuModal === true &&
-            "!grid place-content-center z-999 w-[270px] h-[80px] right-0 bg-black text-white"
+            "!grid place-content-center z-999 w-[270px] h-[67px] pt-6 right-0 bg-black text-white"
           }`}
         >
-          <ul className={`flex gap-x-2 ${
-            isMenuModal === true &&
-            "!flex  "
-          }`}>
+          <ul className={`flex gap-x-2 ${isMenuModal === true && "!flex  "}`}>
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
               <a href="">Home</a>
             </li>

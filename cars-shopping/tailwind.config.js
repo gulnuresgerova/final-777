@@ -11,8 +11,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/images/bmw-bg.jpg')",
-        'stop': "url('/images/stop.jpg')"
+        'hero-pattern': "url('/images/bmw-bg1.jpg')",
+        'stop': "url('/images/stop.jpg')",
+        'site': "url('/images/bgs.jpeg')"
       },
       container: {
         

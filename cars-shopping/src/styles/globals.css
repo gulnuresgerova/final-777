@@ -40,6 +40,11 @@ body {
   padding: 30px;
 border: 1px solid white;
 }
+.blur{
+  
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+}
 @media screen and (max-width: 767px) {
   .container {
     padding: 0 5%;
