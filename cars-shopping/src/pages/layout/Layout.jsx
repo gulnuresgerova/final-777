@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Layout = () => {
   return (
-    <div className="relative m-0 p-0  h-screen layout  w-full md:w-auto overflow-hidden">
+    <div className="relative m-0 p-0  bg-black h-screen layout  w-full md:w-auto overflow-hidden">
       <video
         className=" absolute w-full  min-w-full  md:h-full max-w-none md:w-auto "
         autoPlay

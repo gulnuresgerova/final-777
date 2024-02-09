@@ -9,6 +9,8 @@ import Stop from "../stop/Stop";
 import Site from "../stop/Site";
 import Fade from "../../../components/Fade";
 import Campaigns from "../../../components/Campaigns";
+import Rental from "../../../components/Rental";
+import Customers from "../../../components/costumers/Customers";
 
 
 
@@ -28,7 +30,8 @@ const Index = () => {
       <Fade/>
       <Campaigns/>
       <Shops/>
-
+      <Rental/>
+<Customers/>
 
   </div>
   );

@@ -5,6 +5,7 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { useState } from "react";
 import Search from "../ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+import Link from "next/link";
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
@@ -13,23 +14,26 @@ const Header = () => {
       <div className="container mx-auto text-white flex justify-between items-center h-full">
         <Logo />
         <nav
-          className={`md:static absolute top-0 left-0 sm:w-auto md:h-auto w-full h-full  text-white  bg-black  md:flex hidden ${
+          className={`md:static absolute top-0 left-0 sm:w-auto md:h-auto w-full text-white  bg-black  md:flex hidden ${
             isMenuModal === true &&
             "!grid place-content-center z-999 w-[270px] h-[67px] pt-6 right-0 bg-black text-white"
           }`}
         >
           <ul className={`flex gap-x-2 ${isMenuModal === true && "!flex  "}`}>
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
-              <a href="">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
-              <a href="">Shop</a>
+              <Link href="/shop">Shop</Link>
             </li>
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
-              <a href="">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
-              <a href="">Contact us</a>
+              <Link href="/contact">Contact us</Link>
+            </li>
+            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+              <Link href="/reservation"> Rental</Link>
             </li>
           </ul>
           {isMenuModal && (

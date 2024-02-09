@@ -1,8 +1,8 @@
 import Head from "next/head";
 
 import Home from "./home";
-import Header from "../../components/layout/Header";
-import Footer from "../../components/layout/Footer";
+
+
 
 
 const Index = () => {
@@ -19,10 +19,10 @@ const Index = () => {
         />
       </Head>
 
-      <Header />
+     
       <Home />
+     
       
-      <Footer/>
      
     </div>
   );
