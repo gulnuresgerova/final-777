@@ -6,6 +6,7 @@ import { useState } from "react";
 import Search from "../ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import Link from "next/link";
+
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
@@ -34,6 +35,9 @@ const Header = () => {
             </li>
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
               <Link href="/reservation"> Rental</Link>
+            </li>
+            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+              <Link href="/about"> about</Link>
             </li>
           </ul>
           {isMenuModal && (

@@ -16,13 +16,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+.back {
+  backdrop-filter: blur(10px);
+}
 .container {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
 }
-.bg{
+.bg {
   height: 60vh;
   width: 100%;
   background-position: center;
@@ -30,18 +32,17 @@ body {
   background-attachment: fixed;
   /* filter: grayscale(90%); */
 }
-.bgstop{
+.bgstop {
   height: 120vh;
   width: 100%;
   background-position: center;
   background-size: cover;
 }
-.br{
+.br {
   padding: 30px;
-border: 1px solid white;
+  border: 1px solid white;
 }
-.blur{
-  
+.blur {
   filter: blur(20px);
   -webkit-filter: blur(20px);
 }
@@ -49,24 +50,22 @@ border: 1px solid white;
   .container {
     padding: 0 5%;
   }
-.tb-non{
-  display: none;
-}
-.stop{
-  width: 350px;
-  padding-left: 20px;
-}
-.bgstop{
-  height: 80vh;
-}
-.stop h1{
-  font-size: 2rem;
-
-
-}
-.stop p{
-  font-size: 1.2rem;
-}
+  .tb-non {
+    display: none;
+  }
+  .stop {
+    width: 350px;
+    padding-left: 20px;
+  }
+  .bgstop {
+    height: 80vh;
+  }
+  .stop h1 {
+    font-size: 2rem;
+  }
+  .stop p {
+    font-size: 1.2rem;
+  }
   .layout {
     margin: 0;
     padding: 0;
@@ -158,10 +157,10 @@ border: 1px solid white;
   transition: 0.2s ease-in-out;
   z-index: 1;
 }
-.hover{
+.hover {
   overflow: hidden;
 }
-.hover:hover .images{
+.hover:hover .images {
   filter: contrast(110%);
   transform: scale(1.2);
   transition: all 0.5s;

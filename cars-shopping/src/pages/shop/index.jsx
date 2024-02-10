@@ -1,17 +1,16 @@
-import React from "react";
-import About from "../../../components/About";
+import React from 'react'
+import Shops from '../../../components/product/Shops'
 import Header from "../../../components/layout/Header";
 import Footer from "../../../components/layout/Footer";
-
 
 const Index = () => {
   return (
     <div>
-      <Header/>
-     <About/>
-     <Footer/>
+        <Header/>
+        <Shops/>
+        <Footer/>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
