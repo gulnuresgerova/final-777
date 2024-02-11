@@ -50,22 +50,22 @@ const Header = () => {
           )}
         </nav>
         <div className="flex gap-x-4 items-center">
-          <a href="#">
-            <FaUserAlt className="hover:text-red transition-all" />
-          </a>
-          <a href="#">
+          <Link href="/auth/login">
+            <FaUserAlt className="hover:text-red transition-all cursor-pointer" />
+          </Link>
+          <Link href="/cart">
             <FaShoppingCart className="hover:text-red transition-all" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link href="#">
             <button onClick={() => setIsSearchModal(true)}>
-              <FaSearch className="hover:text-red transition-all" />
+              <FaSearch className="hover:text-red transition-all cursor-pointer" />
             </button>
-          </a>
+          </Link>
           <button
             className="md:hidden inline-block"
             onClick={() => setIsMenuModal(true)}
           >
-            <GiHamburgerMenu className="text-xl hover:text-red transition-all" />
+            <GiHamburgerMenu className="text-xl hover:text-red transition-all cursor-pointer" />
           </button>
         </div>
       </div>
