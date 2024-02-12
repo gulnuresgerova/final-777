@@ -1,8 +1,9 @@
 import React from "react";
-import Input from "../../components/form/Input";
-import Title from "../../components/ui/Title";
+
 import { useFormik } from "formik";
 import { profileSchema } from "../../schema/profile";
+import Title from "../ui/Title";
+import Input from "../form/input";
 
 const Account = () => {
   const onSubmit = async (values, actions) => {
@@ -78,9 +79,9 @@ const Account = () => {
       errorMessage: errors.bio,
       touched: touched.bio,
     },
-  ];
+  ]
   return (
-    <form className="lg:p-8 flex-1 lg:mt-0 mt-5">
+    <form className="lg:p-8 flex-1 font-dancing lg:mt-0 mt-5">
       <Title addClass="text-[40px]">Account Settings</Title>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4">
         {inputs.map((input) => (
@@ -92,7 +93,7 @@ const Account = () => {
           />
         ))}
       </div>
-      <button className="btn-primary mt-4">Update</button>
+      <button className="bg-primary p-2 rounded-2xl mt-4">Update</button>
     </form>
   );
 };

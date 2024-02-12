@@ -36,9 +36,7 @@ const Header = () => {
             <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
               <Link href="/reservation"> Rental</Link>
             </li>
-            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
-              <Link href="/about"> about</Link>
-            </li>
+           
           </ul>
           {isMenuModal && (
             <button

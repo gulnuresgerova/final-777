@@ -1,8 +1,10 @@
 import { useFormik } from "formik";
 import Link from "next/link";
-import Input from "../../components/form/Input";
-import Title from "../../components/ui/Title";
-import { registerSchema } from "../../schema/register";
+
+
+import { registerSchema } from "../../../schema/register";
+import Input from "../../../components/form/input";
+import Title from "../../../components/ui/Title";
 
 const Register = () => {
   const onSubmit = async (values, actions) => {
@@ -61,12 +63,12 @@ const Register = () => {
   ];
 
   return (
-    <div className="container mx-auto">
+    <div className="container font-dancing mx-auto">
       <form
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
       >
-        <Title addClass="text-[40px] mb-6">Register</Title>
+        <Title addClass="text-[40px]  mb-6">Register</Title>
         <div className="flex flex-col gap-y-3 w-full">
           {inputs.map((input) => (
             <Input
@@ -78,7 +80,7 @@ const Register = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="btn-primary">REGISTER</button>
+          <button className="bg-primary p-3">REGISTER</button>
           <Link href="/auth/login">
             <span className="text-sm underline cursor-pointer text-secondary">
               Do you have a account?

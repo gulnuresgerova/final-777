@@ -13,7 +13,9 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/images/bmw-bg1.jpg')",
         'stop': "url('/images/stop.jpg')",
-        'site': "url('/images/bgs.jpeg')"
+        'site': "url('/images/bgs.jpeg')",
+        'red': "url('/images/red.png')",
+        
       },
       container: {
         

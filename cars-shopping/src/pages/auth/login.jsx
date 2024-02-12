@@ -1,9 +1,12 @@
 import { useFormik } from "formik";
 import Link from "next/link";
+import Image from "next/image";
 
 import { loginSchema } from "../../../schema/login";
 import Title from "../../../components/ui/Title";
 import Input from "../../../components/form/input";
+import Layout from "../layout/Layout";
+
 
 const Login = () => {
   const onSubmit = async (values, actions) => {
@@ -42,12 +45,19 @@ const Login = () => {
   ];
 
   return (
-    <div className="container mx-auto">
+
+   
+<div className=" h-screen   mx-auto  w-full md:w-auto ">
+
+
+
+<div className="container mx-auto font-dancing">
+    
       <form
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
       >
-        <Title addClass="text-[40px] mb-6">Login</Title>
+        <Title addClass="text-[40px] font-dancing mb-6">Login</Title>
         <div className="flex flex-col gap-y-3 w-full">
           {inputs.map((input) => (
             <Input
@@ -59,9 +69,9 @@ const Login = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="btn-primary">LOGIN</button>
-          <button className="btn-primary !bg-secondary">
-            <i className="fa fa-github mr-2 text-lg"></i>
+          <button className="btn-primary p-3 bg-primary">LOGIN</button>
+          <button className="btn-primary p-3 !bg-secondary text-white">
+           
             GITHUB
           </button>
           <Link href="/auth/register">
@@ -72,6 +82,7 @@ const Login = () => {
         </div>
       </form>
     </div>
+   </div>
   );
 };
 
