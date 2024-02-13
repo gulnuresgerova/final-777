@@ -32,7 +32,8 @@ module.exports = {
       colors: {
         primary: "#ffbe33",
         secondary: "#222831",
-        red :"#ff3d24"
+        red :"#ff3d24",
+        success: "#00ff00",
       },
       fontFamily: {
         protest: ['Protest Revolution', "sans-serif"],

@@ -93,7 +93,7 @@ const Account = () => {
           />
         ))}
       </div>
-      <button className="bg-primary p-2 rounded-2xl mt-4">Update</button>
+      <button className="bg-primary text-white p-2 rounded-2xl mt-4">Update</button>
     </form>
   );
 };

@@ -1,9 +1,10 @@
 import { useFormik } from "formik";
 import Link from "next/link";
 
-import { adminSchema } from "../../schema/admin";
+import { adminSchema } from "../../../schema/admin";
 import Title from "../../../components/ui/Title";
 import Input from "../../../components/form/input";
+import Footer from "../../../components/layout/Footer";
 
 const Login = () => {
   const onSubmit = async (values, actions) => {
@@ -59,7 +60,7 @@ const Login = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="btn-primary">LOGIN</button>
+          <button className="bg-primary p-2">LOGIN</button>
           <Link href="/">
             <span className="text-sm underline cursor-pointer text-secondary">
               Home Page

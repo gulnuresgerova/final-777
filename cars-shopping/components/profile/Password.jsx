@@ -55,7 +55,7 @@ const Password = () => {
           />
         ))}
       </div>
-      <button className="bg-primary p-2 rounded-2xl mt-4" type="submit">
+      <button className="bg-primary text-white p-2 rounded-2xl mt-4" type="submit">
         Update
       </button>
     </form>
