@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { IoIosHome } from "react-icons/io";
 import { GiPerpendicularRings } from "react-icons/gi";
-import { useState } from "react";
+
 import Account from "../../../components/profile/Account";
 import Password from "../../../components/profile/Password";
 import Order from "../../../components/profile/Order";
@@ -9,8 +9,24 @@ import { FaKey } from "react-icons/fa6";
 import { ImExit } from "react-icons/im";
 import Footer from "../../../components/layout/Footer";
 import Header from "../../../components/layout/Header";
-const Profile = () => {
+import { getSession, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+const Profile = ({ session }) => {
     const [tabs, setTabs] = useState(0);
+    const { push } = useRouter();
+    
+  
+    const handleSignOut = () => {
+      if (confirm("Are you sure you want to sign out?")) {
+        signOut({ redirect: false });
+        push("/auth/login");
+      }
+    };
+  
+    useEffect(() => {
+      push("/auth/login");
+    }, [session, push]);
   return (
 <div>
   <Header/>
@@ -55,11 +71,10 @@ const Profile = () => {
             <button className="ml-1">Orders</button>
           </li>
           <li
-            className={`border w-full flex text-center align-center justify-center  p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
-              tabs === 3 && "bg-primary text-white"
-            }`}
-            onClick={() => setTabs(3)}
-          >
+              className={`border w-full p-3 flex text-center align-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all`}
+              onClick={handleSignOut}
+            >
+          
             <ImExit className="m-0 p-0 size-5"/>
             <button className="ml-1">Exit</button>
           </li>
@@ -74,5 +89,24 @@ const Profile = () => {
 </div>
   );
 };
+export async function getServerSideProps({ req }) {
+  const session = await getSession({ req });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth/login",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session,
+    },
+  };
+}
+
 
 export default Profile;

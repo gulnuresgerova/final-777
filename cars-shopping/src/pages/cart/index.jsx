@@ -9,13 +9,14 @@ import { reset } from "../../../redux/cartSlice";
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
  
   return (
     <div className="min-h-[calc(100vh_-_433px)] font-dancing  bg-black bg-no-repeat h-full w-full bg-[url('/images/red.png')]">
       <Header className="!bg-transparent" />
       <div className="flex justify-between items-center md:flex-row flex-col">
-        <div className="md:min-h-[calc(100vh_-_433px)] flex items-center flex-1 p-10 overflow-x-auto w-full">
-          <table className="w-full bg-transparent text-sm text-center text-white min-w-full">
+        <div className="md:min-h-[calc(100vh_-_433px)] flex items-center flex-1 p-10  w-full">
+          <table className="w-full bg-transparent text-sm text-center text-white min-w-full ">
             <thead className="text-xs bg-transparent text-white uppercase ">
               <tr>
                 <th scope="col" className=" border-2 border-gray-700 p-6 ">
@@ -83,7 +84,7 @@ const Cart = () => {
           <div>
             <button
               className="bg-red shop font-dancing text-black p-2 w-5/12 hover:text-white hover:bg-transparent border-1  rounded-3xl"
-              onClick={() => dispatch(reset())}
+              onClick={()=>dispatch(reset())}
              
             >
               checkout
