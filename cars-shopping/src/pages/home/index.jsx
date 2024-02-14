@@ -14,7 +14,7 @@ import Customers from "../../../components/costumers/Customers";
 
 
 
-const Index = () => {
+const Index = ({ categoryList , productList}) => {
   return (
   <div >
  
@@ -29,7 +29,7 @@ const Index = () => {
       </div>
       <Fade/>
       <Campaigns/>
-      <Shops/>
+      <Shops categoryList={categoryList} productList={productList}/>
       <Rental/>
 <Customers/>
 

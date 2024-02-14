@@ -5,11 +5,13 @@ import { useRouter } from "next/router";
 import { loginSchema } from "../../../schema/login";
 import Title from "../../../components/ui/Title";
 import Input from "../../../components/form/input";
-
-import { useSession, signIn, getSession } from "next-auth/react";
+import { getSession, signIn, useSession } from "next-auth/react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 const Login = () => {
   const { data: session } = useSession();
   const { push } = useRouter();
+  const [currentUser, setCurrentUser] = useState();
   const onSubmit = async (values, actions) => {
     const { email, password } = values;
     let options = { redirect: false, email, password };
@@ -17,14 +19,27 @@ const Login = () => {
       const res = await signIn("credentials", options);
       actions.resetForm();
   
-      push("/profile");
+      // push("/profile/65cce43fba08f583e4f9235c");
     } catch (err) {
       console.log(err);
     }
   };
 
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users`);
+        setCurrentUser(
+          res.data?.find((user) => user.email === session?.user?.email)
+        );
+        session && push("/profile/" + currentUser?._id);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getUser();
+  }, [session, push, currentUser]);
 
-  console.log(session);
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
     useFormik({
       initialValues: {
@@ -100,10 +115,12 @@ const Login = () => {
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
 
-  if (session) {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users`);
+  const user = res.data?.find((user) => user.email === session?.user.email);
+  if (session && user) {
     return {
       redirect: {
-        destination: "/profile",
+        destination: "/profile/" + user._id,
         permanent: false,
       },
     };

@@ -10,6 +10,7 @@ const CampaignItem1 = () => {
           src="/images/zp2.jpg"
           alt=""
           layout="fill"
+          priority
           
           className="hover:scale-105 w-[40] h-[40] transition-all"
           objectFit="cover"

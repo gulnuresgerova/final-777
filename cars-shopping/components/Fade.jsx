@@ -27,6 +27,7 @@ function Fade() {
             alt=""
             layout="fill"
             objectFit="cover"
+            priority
           />
         </div>
       </div>

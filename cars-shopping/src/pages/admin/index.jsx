@@ -5,7 +5,7 @@ import Link from "next/link";
 import { adminSchema } from "../../../schema/admin";
 import Title from "../../../components/ui/Title";
 import Input from "../../../components/form/input";
-import Footer from "../../../components/layout/Footer";
+
 
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
@@ -60,7 +60,7 @@ const Login = () => {
   ];
 
   return (
-    <div className="container mx-auto py-3">
+    <div className="container mx-auto font-dancing py-3">
       <form
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}

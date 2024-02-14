@@ -12,10 +12,11 @@ import Footers from "../../../components/admin/Footers";
 import Header from "../../../components/layout/Header";
 
 import { toast } from "react-toastify";
+import AddProduct from "../../../components/admin/AddProduct";
 const Profile = () => {
   const [tabs, setTabs] = useState(0);
   const { push } = useRouter();
-
+  const [isProductModal, setIsProductModal] = useState(false);
   const closeAdminAccount = async () => {
     try {
       if (confirm("Are you sure you want to close your Admin Account?")) {
@@ -33,7 +34,7 @@ const Profile = () => {
   return (
 <div>
   <Header/>
-<div className="flex px-10 min-h-[calc(100vh_-_433px)] lg:flex-row flex-col lg:mb-0 mb-10">
+<div className="flex px-10 min-h-[calc(100vh_-_433px)] font-dancing lg:flex-row flex-col lg:mb-0 mb-10">
       <div className="lg:w-80 w-100 flex-shrink-0">
         <div className="relative flex flex-col items-center px-10 py-5 border border-b-0">
           <Image
@@ -98,7 +99,13 @@ const Profile = () => {
       {tabs === 1 && <Order/>}
       {tabs === 2 && <Category />}
       {tabs === 3 && <Footers/>}
-      
+      {isProductModal && <AddProduct setIsProductModal={setIsProductModal} />}
+      <button
+        className="bg-primary rounded-full flex align-center justify-center !w-12 !h-12 !p-0 absolute bottom-14 right-10 text-4xl"
+        onClick={() => setIsProductModal(true)}
+      >
+        +
+      </button>
     </div>
     <Footer/>
 </div>

@@ -1,7 +1,8 @@
+import axios from "axios";
 import Image from "next/image";
 import { IoIosHome } from "react-icons/io";
 import { GiPerpendicularRings } from "react-icons/gi";
-
+import { signOut, useSession } from "next-auth/react";
 import Account from "../../../components/profile/Account";
 import Password from "../../../components/profile/Password";
 import Order from "../../../components/profile/Order";
@@ -9,10 +10,11 @@ import { FaKey } from "react-icons/fa6";
 import { ImExit } from "react-icons/im";
 import Footer from "../../../components/layout/Footer";
 import Header from "../../../components/layout/Header";
-import { getSession, signOut, useSession } from "next-auth/react";
+
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-const Profile = ({ session }) => {
+const Profile = ({ user }) => {
+  const { data: session } = useSession();
     const [tabs, setTabs] = useState(0);
     const { push } = useRouter();
     
@@ -25,7 +27,9 @@ const Profile = ({ session }) => {
     };
   
     useEffect(() => {
-      push("/auth/login");
+      if (!session) {
+        push("/auth/login");
+      }
     }, [session, push]);
   return (
 <div>
@@ -34,13 +38,14 @@ const Profile = ({ session }) => {
       <div className="lg:w-80 w-100 flex-shrink-0">
         <div className="relative flex flex-col items-center px-10 py-5 border border-b-0 ">
           <Image
-            src="/images/ozum.jpeg"
+          
+            src={user.image ? user.image : "/images/ozum.jpeg"}
             alt=""
             width={100}
             height={100}
             className="rounded-full"
           />
-          <b className="text-2xl mt-1">Esgerova Gulnur</b>
+          <b className="text-2xl mt-1">{user.fullName}</b>
         </div>
         <ul className="text-center font-semibold">
         <li
@@ -80,8 +85,8 @@ const Profile = ({ session }) => {
           </li>
         </ul>
       </div>
-      {tabs === 0 && <Account />}
-      {tabs === 1 && <Password />}
+      {tabs === 0 && <Account user={user}/>}
+      {tabs === 1 && <Password user={user}/>}
       {tabs === 2 && <Order />}
      
     </div>
@@ -89,21 +94,16 @@ const Profile = ({ session }) => {
 </div>
   );
 };
-export async function getServerSideProps({ req }) {
-  const session = await getSession({ req });
+export async function getServerSideProps({ req, params  }) {
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/auth/login",
-        permanent: false,
-      },
-    };
-  }
+  const user = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/users/${params.id}`
+  );
+
 
   return {
     props: {
-      session,
+      user: user ? user.data : null,
     },
   };
 }
