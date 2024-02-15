@@ -42,7 +42,7 @@ const Shops = ({ categoryList, productList }) => {
         {filter.length > 0 &&
                   filter
                   .slice(0, productLimit)
-                  .map((product) => <MenuItem key={product._id} product={product} />)}
+                  .map((product) => <Shopsitem key={product._id} product={product} />)}
             </div>
             <div className="flex items-center justify-center w-full mt-8">
               <button

@@ -2,6 +2,7 @@ import Image from "next/image";
 import axios from "axios";
 import Header from "../../../components/layout/Header";
 import Footer from "../../../components/layout/Footer";
+import Title from "../../../components/ui/Title";
 
 const Order = ({ order }) => {
   const status = order?.status;
@@ -12,9 +13,10 @@ const Order = ({ order }) => {
     if (index - status > 1) return "";
   };
   return (
-    <div className="overflow-x-auto bg-black bg-no-repeat h-full w-full bg-[url('/images/red.png')]">
+    <div className="overflow-x-auto  bg-black bg-no-repeat h-full w-full bg-[url('/images/red.png')]">
       <Header />
-      <div className="min-h-[calc(100vh_-_433px)] flex align-center mt-11 justify-center items-center flex-col p-10  min-w-[1000px]">
+   
+      <div className="min-h-[calc(100vh_-_433px)] flex pt-36 align-center mt-11 justify-center items-center flex-col p-10  ">
         <div className=" bg-transparent flex items-center flex-1  w-full max-h-28">
           <table className="w-full bg-transparent  text-sm text-center text-gray-500">
             <thead className="text-xs bg-transparent text-gray-400 uppercase ">
