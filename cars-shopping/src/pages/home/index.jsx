@@ -16,9 +16,9 @@ import Customers from "../../../components/costumers/Customers";
 
 const Index = ({ categoryList , productList}) => {
   return (
-  <div >
+  <div className="pt-12 " >
  
-      <Layout/>
+      <Layout className="bg-black"/>
       <Cars/>
       <Bgimg/>
       <Whelis/>

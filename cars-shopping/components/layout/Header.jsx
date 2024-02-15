@@ -4,6 +4,7 @@ import Title from "../ui/Title";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useState } from "react";
 import Search from "../ui/Search";
+import { useRouter } from "next/router";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import Link from "next/link";
 import { useSelector } from "react-redux";
@@ -12,8 +13,13 @@ const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
   const cart = useSelector((state) => state.cart);
+  const router = useRouter();
   return (
-    <div className="h-[5.5rem]  bg-black">
+    <div
+      className={`h-[5.5rem] z-50 fixed  w-full ${
+        router.asPath === "/" ? "bg-black" : "bg-black"
+      }`}
+    >
       <div className="container mx-auto text-white flex justify-between items-center h-full">
         <Logo />
         <nav
@@ -22,23 +28,47 @@ const Header = () => {
             "!grid place-content-center z-999 w-[270px] h-[67px] pt-6 right-0 bg-black text-white"
           }`}
         >
-          <ul className={`flex gap-x-2 ${isMenuModal === true && "!flex  "}`}>
-            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+          <ul
+            className={`flex z-50 bg-transparent gap-x-2 ${
+              isMenuModal === true && "!flex  "
+            }`}
+            onClick={() => setIsMenuModal(false)}
+          >
+            <li
+              className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
+                router.asPath === "/" && "text-red"
+              }`}
+            >
               <Link href="/">Home</Link>
             </li>
-            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+            <li
+              className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
+                router.asPath === "/shop" && "text-red"
+              }`}
+            >
               <Link href="/shop">Shop</Link>
             </li>
-            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+            <li
+              className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
+                router.asPath === "/about" && "text-red"
+              }`}
+            >
               <Link href="/about">About</Link>
             </li>
-            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+            <li
+              className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
+                router.asPath === "/contact" && "text-red"
+              }`}
+            >
               <Link href="/contact">Contact us</Link>
             </li>
-            <li className="px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer">
+            <li
+              className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
+                router.asPath === "/reservation" && "text-red"
+              }`}
+            >
               <Link href="/reservation"> Rental</Link>
             </li>
-           
           </ul>
           {isMenuModal && (
             <button
@@ -54,7 +84,7 @@ const Header = () => {
             <FaUserAlt className="hover:text-red transition-all cursor-pointer" />
           </Link>
           <Link href="/cart">
-          <span className="relative">
+            <span className="relative">
               <FaShoppingCart className="hover:text-red transition-all cursor-pointer" />
               <span className="w-4 h-4 text-xs grid place-content-center rounded-full bg-red absolute -top-2 -right-3 text-black font-bold">
                 {cart.products.length === 0 ? "0" : cart.products.length}

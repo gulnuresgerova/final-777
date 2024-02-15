@@ -4,7 +4,7 @@ import React from "react";
 import { useFormik } from "formik";
 import { profileSchema } from "../../schema/profile";
 import Title from "../ui/Title";
-import Input from "../form/input";
+import Input from "../form/Input";
 
 const Account = ({ user }) => {
   const onSubmit = async (values, actions) => {
@@ -88,9 +88,12 @@ const Account = ({ user }) => {
       errorMessage: errors.bio,
       touched: touched.bio,
     },
-  ]
+  ];
   return (
-    <form className="lg:p-8 flex-1 font-dancing lg:mt-0 mt-5 "  onSubmit={handleSubmit}>
+    <form
+      className="lg:p-8 flex-1 font-dancing lg:mt-0 mt-5 "
+      onSubmit={handleSubmit}
+    >
       <Title addClass="text-[40px]">Account Settings</Title>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4">
         {inputs.map((input) => (
@@ -102,7 +105,12 @@ const Account = ({ user }) => {
           />
         ))}
       </div>
-      <button className="bg-primary text-white p-2 rounded-2xl mt-4" type="submit">Update</button>
+      <button
+        className="bg-primary text-white p-2 rounded-2xl mt-4"
+        type="submit"
+      >
+        Update
+      </button>
     </form>
   );
 };

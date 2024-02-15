@@ -1,8 +1,16 @@
 import Image from "next/image";
+import axios from "axios";
 import Header from "../../../components/layout/Header";
 import Footer from "../../../components/layout/Footer";
 
-const Order = () => {
+const Order = ({ order }) => {
+  const status = order?.status;
+
+  const statusClass = (index) => {
+    if (index - status < 1) return "";
+    if (index - status === 1) return "animate-pulse";
+    if (index - status > 1) return "";
+  };
   return (
     <div className="overflow-x-auto bg-black bg-no-repeat h-full w-full bg-[url('/images/red.png')]">
       <Header />
@@ -28,58 +36,58 @@ const Order = () => {
             <tbody className="bg-transparent">
               <tr className="transition-all bg-transparent border-2 border-gray-700 hover:bg-red-600 ">
                 <td className="py-4 px-6  font-medium whitespace-nowrap hover:text-white flex items-center gap-x-1 justify-center">
-                  63107f5559...
+                  {order?._id.substring(0, 5)}...
                 </td>
                 <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                  Emin Başbayan
+                  {order?.customer}
                 </td>
                 <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                  Adana
+                  {order?.address}
                 </td>
                 <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                  $18
+                  ${order?.total}
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <div className="flex justify-between w-full p-10 text-white font-dancing mt-6">
-          <div className="relative flex gap-6 flex-col">
+          <div className={`relative flex align-center text-center justify-center flex-col ${statusClass(0)}`}>
             <Image
-              src="/images/cost1.jpg"
+              src="/images/py-remove.png"
               alt=""
-              width={40}
-              height={40}
+              width={110}
+              height={110}
               objectFit="contain"
             />
             <span>Payment</span>
           </div>
-          <div className="relative flex flex-col  gap-6  animate-pulse">
+          <div className={`relative  flex align-center text-center justify-center flex-col ${statusClass(1)}`}>
             <Image
-              src="/images/cost1.jpg"
+              src="/images/prep-rm.png"
               alt=""
-              width={40}
-              height={40}
+              width={100}
+              height={100}
               objectFit="contain"
             />
             <span>Preparing</span>
           </div>
-          <div className="relative  gap-6  flex flex-col">
+          <div className={`relative gap-2  flex align-center text-center justify-center flex-col ${statusClass(2)}`}>
             <Image
-              src="/images/cost1.jpg"
+              src="/images/kamaz-rm.png"
               alt=""
-              width={40}
-              height={40}
+              width={130}
+              height={130}
               objectFit="contain"
             />
             <span>On the way</span>
           </div>
-          <div className="relative  gap-6  flex flex-col">
+          <div className={`relative flex align-center text-center justify-center flex-col ${statusClass(3)}`}>
             <Image
-              src="/images/cost1.jpg"
+              src="/images/deliv.png"
               alt=""
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               objectFit="contain"
             />
             <span>Delivered</span>
@@ -90,5 +98,18 @@ const Order = () => {
     </div>
   );
 };
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/orders/${params.id}`
+  );
+
+  return {
+    props: {
+      order: res.data ? res.data : null,
+    },
+  };
+};
+
 
 export default Order;

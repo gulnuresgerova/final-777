@@ -4,8 +4,7 @@ import Link from "next/link";
 
 import { adminSchema } from "../../../schema/admin";
 import Title from "../../../components/ui/Title";
-import Input from "../../../components/form/input";
-
+import Input from "../../../components/form/Input";
 
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
@@ -77,7 +76,7 @@ const Login = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="bg-primary p-2" >LOGIN</button>
+          <button className="bg-primary p-2">LOGIN</button>
           <Link href="/">
             <span className="text-sm underline cursor-pointer text-secondary">
               Home Page
@@ -101,6 +100,7 @@ export const getServerSideProps = (ctx) => {
 
   return {
     props: {},
-  };}
+  };
+};
 
 export default Login;

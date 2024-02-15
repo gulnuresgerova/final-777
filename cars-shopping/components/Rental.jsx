@@ -71,7 +71,7 @@ const Rental = () => {
       ];
     
   return (
-    <div className="container mx-auto py-12">
+    <div className="container pt-24 mx-auto py-12">
       <Title addClass="text-[40px] font-dancing mb-10">Book A Table</Title>
       <div className="flex justify-between flex-wrap-reverse gap-10">
       <form  className="lg:flex-1 w-full" onSubmit={handleSubmit}>

@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import { registerSchema } from "../../schema/register";
 import { newPasswordSchema } from "../../schema/newPassword";
 import Title from "../ui/Title";
-import Input from "../form/input";
+import Input from "../form/Input";
 
 const Password = ({ user }) => {
   const onSubmit = async (values, actions) => {
@@ -51,7 +51,10 @@ const Password = ({ user }) => {
     },
   ];
   return (
-    <form className="lg:p-8 flex-1 lg:mt-0 mt-5 font-dancing" onSubmit={handleSubmit}>
+    <form
+      className="lg:p-8 flex-1 lg:mt-0 mt-5 font-dancing"
+      onSubmit={handleSubmit}
+    >
       <Title addClass="text-[40px]">Password</Title>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4">
         {inputs.map((input) => (
@@ -63,7 +66,10 @@ const Password = ({ user }) => {
           />
         ))}
       </div>
-      <button className="bg-primary text-white p-2 rounded-2xl mt-4" type="submit">
+      <button
+        className="bg-primary text-white p-2 rounded-2xl mt-4"
+        type="submit"
+      >
         Update
       </button>
     </form>

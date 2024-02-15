@@ -23,7 +23,7 @@ const Index = ({ categoryList , productList}) => {
 
       <Header />
       
-      <Home categoryList={categoryList}productList={productList} />
+      <Home categoryList={categoryList} productList={productList} />
     
       <Footer/>
      

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Title from "../ui/Title";
-import Input from "../form/input";
+import Input from "../form/Input";
 
 const Category = () => {
   const [inputText, setInputText] = useState("");

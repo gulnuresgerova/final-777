@@ -2,14 +2,30 @@ import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import { RiShoppingCart2Fill } from "react-icons/ri";
+import { useSelector, useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartSlice";
 const Shopsitem = ({ product }) => {
+  const cart = useSelector((state) => state.cart);
+  const findCart = cart.products.find((item) => item._id === product._id);
+
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(
+      addProduct({
+        ...product,
+        extras: [{ text: "empty" }],
+        price: product.prices[0],
+        quantity: 1,
+      })
+    );
+  };
   return (
     <div className="bg-black rounded-3xl">
     <div className="w-full  bg-[#f1f2f3] h-[210px] grid place-content-center rounded-bl-[46px] rounded-tl-2xl rounded-tr-2xl">
-     <Link href={`/product/${product._id}`}>
-     <div className="relative w-36 h-36 hover:scale-110 transition-all">
-     {/* <Image src= "https://{product.img}/path/to/biker_cat.webp" alt="" layout="fill" priority /> */}
-     <Image src= {product.img} alt="" layout="fill" priority />
+     <Link href={`/details/${product._id}`}>
+     <div className="relative w-56 h-44 hover:scale-110 transition-all">
+     <Image src={product.img} alt="" layout="fill" priority />
       </div>
      
      </Link >
@@ -21,7 +37,8 @@ const Shopsitem = ({ product }) => {
       </p>
       <div className="flex justify-between items-center mt-4">
         <span>${product.prices[0]}</span>
-        <button className="bg-primary !w-10 !h-10 !rounded-full !p-0 grid place-content-center">
+        <button className="bg-primary !w-10 !h-10 !rounded-full !p-0 grid place-content-center" disabled={findCart}
+            onClick={handleClick}>
           <RiShoppingCart2Fill />
         </button>
       </div>

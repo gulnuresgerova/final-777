@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { loginSchema } from "../../../schema/login";
 import Title from "../../../components/ui/Title";
-import Input from "../../../components/form/input";
+import Input from "../../../components/form/Input";
 import { getSession, signIn, useSession } from "next-auth/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ const Login = () => {
     try {
       const res = await signIn("credentials", options);
       actions.resetForm();
-  
+
       // push("/profile/65cce43fba08f583e4f9235c");
     } catch (err) {
       console.log(err);

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { registerSchema } from "../../../schema/register";
-import Input from "../../../components/form/input";
+import Input from "../../../components/form/Input";
 import Title from "../../../components/ui/Title";
 import { toast } from "react-toastify";
 const Register = () => {
@@ -93,7 +93,9 @@ const Register = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="bg-primary p-3" type="submit">REGISTER</button>
+          <button className="bg-primary p-3" type="submit">
+            REGISTER
+          </button>
           <Link href="/auth/login">
             <span className="text-sm underline cursor-pointer text-secondary">
               Do you have a account?

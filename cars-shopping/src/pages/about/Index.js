@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div>
       <Header/>
-     <About/>
+     <About className="pt-12 "/>
      <Footer/>
     </div>
   );

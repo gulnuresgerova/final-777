@@ -64,7 +64,7 @@ const AddProduct = ({ setIsProductModal }) => {
   
       try {
         const uploadRes = await axios.post(
-          "https://api.cloudinary.com/v1_1/dt3vu3tm4/image/upload",
+          "http://api.cloudinary.com/v1_1/dt3vu3tm4/image/upload",
           data
         );
         const { url } = uploadRes.data;
@@ -105,12 +105,12 @@ const AddProduct = ({ setIsProductModal }) => {
                   onChange={handleOnChange}
                   className="hidden"
                 />
-                <button className="bg-black text-white p-2 pointer-events-none">
+                <button className="bg-black text-primary p-2 rounded-xl pointer-events-none">
                   Choose an Image
                 </button>
                 {imageSrc && (
                   <div>
-                 
+                  {/*eslint-disable-next-line @next/next/no-img-element*/}
                     <img
                       src={imageSrc}
                       alt=""
@@ -160,7 +160,7 @@ const AddProduct = ({ setIsProductModal }) => {
 
             <div className="flex flex-col text-sm mt-2 w-full">
               <span className="font-semibold mb-[2px]">Prices</span>
-              {category === "pizza" ? (
+              {category === "bmw" ? (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
                     type="number"
@@ -215,7 +215,7 @@ const AddProduct = ({ setIsProductModal }) => {
                     setExtra({ ...extra, [e.target.name]: e.target.value })
                   }
                 />
-                <button className="bg-primary p-2 rounded-2xl ml-auto" onClick={handleExtra}>
+                <button className="bg-primary p-2 rounded-xl ml-auto" onClick={handleExtra}>
                   Add
                 </button>
               </div>
@@ -237,7 +237,7 @@ const AddProduct = ({ setIsProductModal }) => {
               </div>
             </div>
             <div className="flex justify-end">
-              <button className="p-2 rounded-2xl !bg-success "  onClick={handleCreate}>Create</button>
+              <button className="p-2 rounded-xl !bg-primary "  onClick={handleCreate}>Create</button>
             </div>
             <button
               className="absolute  top-4 right-4"

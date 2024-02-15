@@ -8,7 +8,7 @@ const Index = ({ categoryList , productList}) => {
   return (
     <div>
         <Header/>
-        <Shops categoryList={categoryList} productList={productList} />
+        <Shops   categoryList={categoryList} productList={productList} />
         <Footer/>
     </div>
   )
