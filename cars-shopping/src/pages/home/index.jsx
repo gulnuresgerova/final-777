@@ -46,6 +46,7 @@ const Index = ({ categoryList, productList }) => {
       <Phorse />
       <Customers />
       <Shiftup />
+      
     </div>
   );
 };
