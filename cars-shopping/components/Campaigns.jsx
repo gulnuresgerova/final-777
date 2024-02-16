@@ -4,7 +4,7 @@ import { MdShoppingCart } from "react-icons/md";
 
 const CampaignItem1 = () => {
   return (
-    <div className="bg-black flex-1 rounded-md py-5 px-[15px] flex items-center gap-x-4">
+    <div className="st flex-1 rounded-md py-5 px-[15px] flex items-center gap-x-4">
       <div className="relative md:w-44 md:h-44 w-36 h-36 after:content-['']   border-[5px] border-red rounded-full overflow-hidden">
         <Image
           src="/images/zp2.jpg"
@@ -31,7 +31,7 @@ const CampaignItem1 = () => {
 };
 const CampaignItem2 = () => {
     return (
-      <div className="bg-black flex-1 rounded-md py-5 px-[15px] flex items-center gap-x-4">
+      <div className="st flex-1 rounded-md py-5 px-[15px] flex items-center gap-x-4">
         <div className="relative md:w-44 md:h-44 w-36 h-36 after:content-['']   border-[5px] border-red rounded-full overflow-hidden">
           <Image
             src="/images/fort-vp.jpeg"

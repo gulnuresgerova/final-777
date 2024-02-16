@@ -3,7 +3,7 @@ import Image from "next/image";
 import {Card, CardFooter,} from "@nextui-org/react";
 const Whelis = () => {
   return (
-    <div className="bg-black whelis h-full w-full ">
+    <div className="mt whelis h-full w-full ">
       <div className="container md:pt-5  mt-10">
         <div className="flex container align-center justify-between w-full mt-10 pt-7 md:pt-5 pb-6">
           <h1 className="text-white catagory text-3xl font-dancing">

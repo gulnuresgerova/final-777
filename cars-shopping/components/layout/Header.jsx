@@ -57,17 +57,10 @@ const Header = () => {
             </li>
             <li
               className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
-                router.asPath === "/contact" && "text-red"
-              }`}
-            >
-              <Link href="/contact">Contact us</Link>
-            </li>
-            <li
-              className={`px-[5px] font-dancing py-[10px] uppercase hover:text-red cursor-pointer ${
                 router.asPath === "/reservation" && "text-red"
               }`}
             >
-              <Link href="/reservation"> Rental</Link>
+              <Link href="/reservation"> Contact</Link>
             </li>
           </ul>
           {isMenuModal && (

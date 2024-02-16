@@ -8,7 +8,7 @@ const Customers = () => {
   function NextBtn({ onClick }) {
     return (
       <button
-        className="absolute -bottom-12 mt-32 left-1/2 bg-primary flex items-center justify-center w-10 h-10 rounded-full text-white"
+        className="absolute -bottom-12 mt-32 left-1/2 bg-red flex items-center justify-center w-10 h-10 rounded-full text-white"
         onClick={onClick}
       >
         <IoIosArrowForward />
@@ -19,7 +19,7 @@ const Customers = () => {
   function PrevBtn({ onClick }) {
     return (
       <button
-        className="absolute -bottom-12 right-1/2 bg-primary flex items-center justify-center w-10 h-10 rounded-full text-white mr-2"
+        className="absolute -bottom-12 right-1/2 bg-red flex items-center justify-center w-10 h-10 rounded-full text-white mr-2"
         onClick={onClick}
       >
         <IoIosArrowBack />

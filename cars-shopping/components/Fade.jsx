@@ -13,63 +13,63 @@ function Fade() {
     waitForAnimate: false,
     autoplay: true,
     autoplaySpeed: 3000,
-  
-
   };
   return (
-    <div className="slider-container">
+  <div className="bg-black">
+      <div className="slider-container container bg-black">
       <Slider {...settings}>
         <div className="h-screen w-full container mx-auto ">
-        <div className=" w-full h-full">
-        <div className=" h-full w-full">
-          <Image
-            src="/images/yeter.jpg"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        </div>
-      </div>
-        </div>
-        <div className="h-screen w-full container mx-auto ">
-        <div className=" w-full h-full">
-        <div className=" h-full w-full">
-          <Image
-            src="/images/mor.jpg"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-      </div>
+          <div className=" w-full h-full">
+            <div className=" h-full w-full">
+              <Image
+                src="/images/fade6.jpg"
+                alt=""
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
         <div className="h-screen w-full container mx-auto ">
-        <div className=" w-full h-full">
-        <div className=" h-full w-full">
-          <Image
-            src="/images/yagis.png"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-      </div>
+          <div className=" w-full h-full">
+            <div className=" h-full w-full">
+              <Image
+                src="/images/fade3.jpg"
+                alt=""
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
         </div>
         <div className="h-screen w-full container mx-auto ">
-        <div className=" w-full h-full">
-        <div className=" h-full w-full">
-          <Image
-            src="/images/bmw-bg.jpg"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-          />
+          <div className=" w-full h-full">
+            <div className=" h-full w-full">
+              <Image
+                src="/images/fade2.jpg"
+                alt=""
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
         </div>
-      </div>
+        <div className="h-screen w-full container mx-auto ">
+          <div className=" w-full h-full">
+            <div className=" h-full w-full">
+              <Image
+                src="/images/fade4.jpg"
+                alt=""
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
         </div>
       </Slider>
     </div>
+  </div>
   );
 }
 

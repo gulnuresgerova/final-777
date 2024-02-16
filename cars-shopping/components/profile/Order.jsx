@@ -40,7 +40,7 @@ const Order = () => {
   }, [session]);
 
   return (
-    <div className="lg:p-8 flex-1  lg:mt-0 mt-5">
+    <div className="lg:p-8 flex-1 font-dancing lg:mt-0 mt-5">
       <Title addClass="text-[40px]">Orders</Title>
       <div className=" w-full mt-5">
         <table className="w-full text-sm text-center text-gray-500  min-w-100%">

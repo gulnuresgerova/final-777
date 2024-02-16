@@ -3,7 +3,7 @@ import Image from "next/image";
 import {Card, CardFooter,} from "@nextui-org/react";
 const Cars = () => {
   return (
-    <div className="bg-black  h-full w-full ">
+    <div className="mt  h-full w-full ">
       <div className="container mt-10">
         <div className="flex container align-center justify-between w-full mt-10 pt-7 pb-6">
           <h1 className="  catagory text-white text-3xl font-dancing">

@@ -3,8 +3,8 @@ import Image from "next/image";
 const CustomerItem = ({ imgSrc }) => {
   return (
   
-    <div className="mt-5 mx-4">
-      <div className="p-6 bg-secondary text-white rounded-[5px]">
+    <div className="mt-5 mx-4 mb-16">
+      <div className="p-6 bg-black text-white rounded-[5px]">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -16,8 +16,8 @@ const CustomerItem = ({ imgSrc }) => {
         </div>
       </div>
       <div
-        className="relative w-28 h-28 border-4 border-primary rounded-full mt-8 before:content-[''] before:absolute before:top-0 
-      flex justify-center before:-translate-y-3 before:rotate-45 before:bg-primary before:w-5 before:h-5 "
+        className="relative w-28 h-28 border-4 border-red rounded-full mt-8 before:content-[''] before:absolute before:top-0 
+      flex justify-center before:-translate-y-3 before:rotate-45 before:bg-red before:w-5 before:h-5 "
       >
         <Image
           src={imgSrc}

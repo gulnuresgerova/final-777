@@ -53,9 +53,9 @@ const Cart = ({ userList }) => {
   return (
     <div className="min-h-[calc(100vh_-_433px)] font-dancing  bg-black bg-no-repeat h-full w-full bg-[url('/images/red.png')]">
       <Header className="!bg-transparent" />
-      <div className="flex justify-between items-center md:flex-row flex-col">
+      <div className="flex justify-between pt-16  items-center md:flex-row flex-col">
         <div className="md:min-h-[calc(100vh_-_433px)] flex items-center flex-1 p-10  w-full">
-        <div className="max-h-52 overflow-auto w-full">
+        <div className="max-h-52  w-full">
             {cart?.products?.length > 0 ? (
           <table className="w-full bg-transparent text-sm text-center text-white min-w-full ">
             <thead className="text-xs bg-transparent text-white uppercase ">

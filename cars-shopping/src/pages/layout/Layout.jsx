@@ -20,7 +20,7 @@ const Layout = () => {
             Build Your Dream Car Today. Now 15% Off On All Items.
           </h1>
           <button className="bg-red shop font-dancing text-black p-3 hover:text-white hover:bg-transparent border-1  rounded-3xl ">
-            shop Now
+            Shop Now
           </button>
         </div>
         <div className="flex axir gap-8 align-start  justify-start ">

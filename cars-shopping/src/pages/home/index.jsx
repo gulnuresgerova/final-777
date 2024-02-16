@@ -11,31 +11,43 @@ import Fade from "../../../components/Fade";
 import Campaigns from "../../../components/Campaigns";
 import Rental from "../../../components/Rental";
 import Customers from "../../../components/costumers/Customers";
+import Bgkecid from "../../../components/ui/Bgkecid";
+import Shopbg from "../../../components/ui/Shopbg";
+import Limuzin from "../stop/limuzin";
+import Orng from "../stop/orng";
+import Shiftup from "../../../components/shiftup/Shiftup";
+import Phorse from "../stop/Phorse";
+import Read from "../stop/Read";
+import Bgv from "../../../components/ui/Bgv";
 
+import Videolayout from "../layout/Videolayout";
 
-
-const Index = ({ categoryList , productList}) => {
+const Index = ({ categoryList, productList }) => {
   return (
-  <div className="pt-12 " >
- 
-      <Layout className="bg-black"/>
-      <Cars/>
-      <Bgimg/>
-      <Whelis/>
-      <Stop/>
-      <Site/>
-      <div className="text-red-600  bg-auto bg-no-repeat bg-center   font-dancing text-center text-3xl kaybol">
-   <Carousel/>
-      </div>
-      <Fade/>
-      <Campaigns/>
-      <Shops categoryList={categoryList} productList={productList}/>
-      <Rental/>
-<Customers/>
+    <div className="pt-12 ">
+      <Layout className="bg-black" />
+      <Cars />
+      <Bgimg />
+      <Whelis />
+      <Stop />
+      <Site />
+     <Bgv/>
+      <Shops categoryList={categoryList} productList={productList} />
+      <div className="text-red-600  bg-auto bg-no-repeat bg-center   font-dancing text-center text-3xl kaybol"></div>
+      <Bgkecid />
+      <Limuzin />
+      <Orng />
+      <Campaigns />
+     <Videolayout/>
+      <Read/>
+      <Fade />
 
-  </div>
+      <Rental />
+      <Phorse />
+      <Customers />
+      <Shiftup />
+    </div>
   );
- 
 };
 
 export default Index;

@@ -15,6 +15,8 @@ module.exports = {
         'stop': "url('/images/stop.jpg')",
         'site': "url('/images/bgs.jpeg')",
         'red': "url('/images/red.png')",
+        'bg': "url('/images/cw-jpeg')",
+
         
       },
       container: {
@@ -33,7 +35,10 @@ module.exports = {
         primary: "#ffbe33",
         secondary: "#222831",
         red :"#ff3d24",
-        success: "#00ff00",
+        bordo :"#7f1f1f",
+        success: "#00ff00", 
+        gry :"#161616",
+
       },
       fontFamily: {
         protest: ['Protest Revolution', "sans-serif"],

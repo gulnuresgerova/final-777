@@ -23,7 +23,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="h-screen w-full -mt-[88px] ">
+    <div className="h-screen   w-full  ">
       <div className="absolute left-0 w-full h-full">
         <div className="relative blur h-full w-full">
           <Image
@@ -37,9 +37,8 @@ const Carousel = () => {
       </div>
       <Slider {...settings}>
         <div>
-          
-          <div className="mt-48  text-white flex flex-col container mx-auto  items-start gap-y-10">
-            <Title addClass="text-5xl">cars</Title>
+          <div className=" text-white mt-44 container mx-auto h-[1000] p-24 flex flex-col items-start gap-y-8">
+            <Title addClass="text-5xl mt-24">whooles</Title>
             <p className="text-sm sm:w-2/5 w-full">
               Doloremque, itaque aperiam facilis rerum, commodi, temporibus
               sapiente ad mollitia laborum quam quisquam esse error unde.
@@ -50,16 +49,19 @@ const Carousel = () => {
           </div>
         </div>
         <div>
-          <div className=" text-white mt-48 container mx-auto  flex flex-col items-start gap-y-8">
-            <Title addClass="text-5xl">whooles</Title>
+          <div className=" text-white mt-48 container mx-auto h-[1000] p-24 justify-start align-start  flex flex-col items-start gap-y-8">
+            <Title addClass="text-5xl mt-24">whooles</Title>
             <p className="text-sm sm:w-2/5 w-full">
               Doloremque, itaque aperiam facilis rerum, commodi, temporibus
               sapiente ad mollitia laborum quam quisquam esse error unde.
               Tempora ex doloremque, labore, sunt repellat dolore, iste magni
               quos nihil ducimus libero ipsam.
             </p>
-            <button className="btn-primary">Shop Now</button>
+            <button className="p-2 bg-transparent outline-dashed outline-2 outline-bordo rounded-2xl">
+              Shop Now
+            </button>
           </div>
+          
         </div>
       </Slider>
     </div>

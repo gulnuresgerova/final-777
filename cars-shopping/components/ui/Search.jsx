@@ -52,7 +52,7 @@ const Search = ({ setIsSearchModal }) => {
                 {filtered.length > 0 ? (
                   filtered.map((product) => (
                     <li
-                      className="flex items-center justify-between p-1 hover:bg-primary transition-all px-2 cursor-pointer"
+                      className="flex items-center justify-between p-1 text-white hover:text-black hover:bg-primary transition-all px-2 cursor-pointer"
                       key={product._id}
                       onClick={() => {
                         router.push(`/product/${product?._id}`);

@@ -20,13 +20,24 @@ body {
   backdrop-filter: blur(10px);
 }
 .btn-primary {
- 
   @apply text-white px-[30px] py-[8px] rounded-3xl bg-primary cursor-pointer hover:opacity-70 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
 }
 .container {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
+}
+.bgp {
+  height: 80vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bga {
+  height: 80vh;
+  width: 500x;
+  background-position: center;
+  background-size: cover;
 }
 .bg {
   height: 60vh;
@@ -35,6 +46,55 @@ body {
   background-size: cover;
   background-attachment: fixed;
   /* filter: grayscale(90%); */
+}
+.sift {
+  background-color: rgba(0, 0, 0, 0.633);
+}
+.st {
+  background-color: rgba(0, 0, 0, 0.763);
+  box-shadow: 7px 7px 23px rgba(255, 0, 0, 0.334);
+}
+.bgg{
+  height: 88vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bge {
+  height: 60vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bgc{
+  height: 60vh;
+  width: 100%;
+  background-position: center;
+  /* background-size: cover; */
+}
+
+.bgst {
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* filter: grayscale(90%); */
+}
+.mt {
+  background-color: black;
+}
+.bgs {
+  padding-left: 50px;
+  height: 90vh;
+  padding: 30 0;
+  background-size: cover;
+  width: 1200px;
+  padding-bottom: 20px;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .bgstop {
   height: 120vh;
@@ -50,9 +110,23 @@ body {
   filter: blur(20px);
   -webkit-filter: blur(20px);
 }
+.sht {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 @media screen and (max-width: 767px) {
   .container {
     padding: 0 5%;
+  }
+  .dbn {
+    display: none;
+  }
+  .shp {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
   }
   .tb-non {
     display: none;

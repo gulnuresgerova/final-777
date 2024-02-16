@@ -160,22 +160,26 @@ const AddProduct = ({ setIsProductModal }) => {
 
             <div className="flex flex-col text-sm mt-2 w-full">
               <span className="font-semibold mb-[2px]">Prices</span>
-              {category === "bmw" ? (
+          <div>
+          {category === "bmw"  ? (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
                     placeholder="small"
+                    min={1}
                     onChange={(e) => changePrice(e, 0)}
                   />
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
                     placeholder="medium"
+                    min={1}
                     onChange={(e) => changePrice(e, 1)}
                   />
                   <input
                     type="number"
+                    min={1}
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
                     placeholder="large"
                     onChange={(e) => changePrice(e, 2)}
@@ -185,12 +189,15 @@ const AddProduct = ({ setIsProductModal }) => {
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
                     type="number"
+                    min={1}
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
                     placeholder="small"
                     onChange={(e) => changePrice(e, 0)}
                   />
                 </div>
               )}
+          </div>
+          
             </div>
             <div className="flex flex-col text-sm mt-4 w-full">
               <span className="font-semibold mb-[2px]">Extra</span>

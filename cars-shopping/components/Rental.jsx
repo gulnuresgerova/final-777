@@ -80,7 +80,7 @@ const Rental = () => {
                 <Input key={input.id} {...input} onChange={handleChange} />
             ))}
           </div>
-          <button  className=" flex items-center  h-[200] bg-red shop font-dancing text-whihe p-2 hover:text-black hover:bg-primary hover:border-primary border-2 border-black mt-5 rounded-3xl " type="submit">BOOK NOW</button>
+          <button  className=" flex items-center  h-[200]  bg-gry font-dancing text-white p-2 hover:text-black hover:bg-transparent  hover:border-black transition-all delay-750 border-2 border-black mt-5 rounded-3xl " type="submit">BOOK NOW</button>
         </form>
         <div className="lg:flex-1  w-full">
           <iframe
