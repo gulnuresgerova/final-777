@@ -6,13 +6,15 @@ const Shops = ({ categoryList, productList }) => {
   const [filter, setFilter] = useState([]);
   const [productLimit, setProductLimit] = useState(3);
   useEffect(() => {
-    setFilter(
-      productList.filter(
-        (product) =>
-          product.category === categoryList[active].title.toLowerCase()
-      )
-    );
-  }, [categoryList, productList, active]);
+    if (productList && categoryList[active]) {
+      setFilter(
+        productList.filter(
+          (product) =>
+            product.category === categoryList[active].title.toLowerCase()
+        )
+      );
+    }
+  }, [productList, categoryList, active]);
   return (
     <div className="bg-black  min-h-[calc(100vh_-_433px)] pb-20 h-full">
       <div className="">

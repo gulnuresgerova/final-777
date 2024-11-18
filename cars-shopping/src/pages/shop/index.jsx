@@ -34,18 +34,30 @@ const Index = ({ categoryList , productList}) => {
   )
 }
 export const getServerSideProps = async () => {
-  const category = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/categories`
-  );
-  const product = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/products`
-  );
-  return {
-    props: {
-      categoryList: category.data ? category.data : [],
-      productList: product.data ? product.data : [],
-    },
-  };
+  try {
+    const category = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/categories`
+    );
+    const product = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/products`
+    );
+
+    return {
+      props: {
+        categories: category.data,
+        products: product.data,
+      },
+    };
+  } catch (error) {
+    console.error("API Error:", error.message);
+    return {
+      props: {
+        categories: [],
+        products: [],
+        error: "Server Error occurred",
+      },
+    };
+  }
 };
 
 export default Index
